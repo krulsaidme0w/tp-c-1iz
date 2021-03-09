@@ -12,7 +12,6 @@ typedef struct {
 } Storage_device;
 Storage_device * storage_device_constructor(char *type, bool overwrite, size_t capacity, size_t inventory_number);
 
-
 typedef struct {
 	Storage_device *data;
 	size_t size;

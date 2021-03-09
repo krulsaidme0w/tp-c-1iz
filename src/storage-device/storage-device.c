@@ -3,13 +3,13 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-Storage_device * storage_device_constructor(char *type, bool overwrite, size_t capacity, size_t inventory_number) {
-	return NULL;
-}
+//Storage_device * storage_device_constructor(char *type, bool overwrite, size_t capacity, size_t inventory_number) {
+//	return NULL;
+//}
 
-Storage * storage_constructor(Storage_device *data, size_t size, size_t capacity) {
-	return NULL;
-}
+//Storage * storage_constructor(Storage_device *data, size_t size, size_t capacity) {
+//	return NULL;
+//}
 
 bool add_storage_device(Storage *s, Storage_device sd) {
 	return 1;

@@ -1,8 +1,10 @@
 #include "storage-device.h"
+#include "input.h"
 #include <string.h>
 #include <stdbool.h>
 #include <stdlib.h>
 
 int main() {
-	printf("1");
+	char *f = gstr();
+	printf("%s\n", f);
 }
