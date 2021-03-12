@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/input/input.h
+
+../src/storage-device/storage-device.h
+stdio.h
+-
+stdbool.h
+-
+
+/home/krul/Documents/tp-c-1iz/cmd/main.c
+storage-device.h
+/home/krul/Documents/tp-c-1iz/cmd/storage-device.h
+input.h
+/home/krul/Documents/tp-c-1iz/cmd/input.h
+string.h
+-
+stdbool.h
+-
+stdlib.h
+-
+

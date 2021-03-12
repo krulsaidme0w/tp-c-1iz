@@ -4,3 +4,6 @@ build-project:
 	
 run-project:
 	cd build/cmd/ && ./main
+
+build-n-run:
+	make build-project && make run-project
