@@ -17,7 +17,7 @@ typedef struct {
 	size_t size;
 	size_t capacity;
 } Storage;
-Storage * storage_constructor(Storage_device *data);
+Storage * storage_constructor(size_t capacity, size_t size);
 
 bool add_storage_device(Storage *s, Storage_device *sd);
 bool print_storage_device(Storage_device *sd);

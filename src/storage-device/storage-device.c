@@ -5,6 +5,11 @@
 
 Storage_device * storage_device_constructor(char *type, bool overwrite, size_t capacity, size_t inventory_number) {
     Storage_device *sd = malloc(sizeof(Storage_device));
+
+    if(!sd) {
+        return NULL;
+    }
+
     sd->capacity = capacity;
     sd->inventory_number = inventory_number;
     sd->type = type;
@@ -13,38 +18,40 @@ Storage_device * storage_device_constructor(char *type, bool overwrite, size_t c
     return sd;
 }
 
-Storage * storage_constructor(Storage_device *data) {
-    if(data) {
-        size_t new_size = sizeof(*data) / sizeof(Storage_device);
-        Storage *s = (Storage *)malloc(sizeof(Storage_device) * (new_size + 1) + 2 * sizeof(size_t));
-        s->data = data;
-        s->size = new_size;
-        s->capacity = new_size + 1;
-        return s;
+Storage * storage_constructor(size_t capacity, size_t size) {
+    Storage *s = malloc(sizeof(Storage));
+
+    if(!s) {
+        return 0;
     }
-    else {
-        Storage *s = NULL;
-        s->data = NULL;
-        s->capacity = 0;
-        s->size = 0;
-        return s;
+
+    s->capacity = capacity;
+    s->size = size;
+    s->data = (Storage_device *)malloc(sizeof(Storage_device) * capacity);
+
+    if(!s->data) {
+        return NULL;
     }
+
+    return s;
 }
 
 bool add_storage_device(Storage *s, Storage_device *sd) {
     if(sd == NULL) {
         return 0;
     }
-    size_t new_capacity = s->capacity;
+
     if(s->size + 1 >= s->capacity) {
-        new_capacity = !(s->capacity) ? 1 : s->capacity * 2;
+        s->capacity *= 2;
+        s->data = (Storage_device *)realloc(s->data, sizeof(Storage_device) * s->capacity);
+
+        if(!s->data) {
+            return 0;
+        }
     }
-    Storage_device *tmp = (Storage_device *)malloc(sizeof(Storage_device) * (new_capacity + 1));
-    tmp = s->data;
-    tmp[s->size] = *sd;
-    s->data = tmp;
-    s->size = s->size + 1;
-    s->capacity = new_capacity;
+
+    s->data[s->size] = *sd;
+    s->size += 1;
     return 1;
 }
 
