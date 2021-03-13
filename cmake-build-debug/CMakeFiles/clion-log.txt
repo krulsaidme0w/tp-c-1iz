@@ -1,7 +1,0 @@
-/snap/clion/139/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/krul/Documents/tp-c-1iz
-CMake Error at src/CMakeLists.txt:5 (add_subdirectory):
-  add_subdirectory given source "menu" which is not an existing directory.
-
-
--- Configuring incomplete, errors occurred!
-See also "/home/krul/Documents/tp-c-1iz/cmake-build-debug/CMakeFiles/CMakeOutput.log".
