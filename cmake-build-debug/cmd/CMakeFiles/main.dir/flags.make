@@ -6,5 +6,5 @@ C_FLAGS = -g
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/krul/Documents/tp-c-1iz/src/storage-device -I/home/krul/Documents/tp-c-1iz/src/input -I/home/krul/Documents/tp-c-1iz/src/menu 
+C_INCLUDES = -I/home/krul/Documents/tp-c-1iz/src/storage-device -I/home/krul/Documents/tp-c-1iz/src/input 
 

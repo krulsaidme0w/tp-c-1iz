@@ -5,7 +5,7 @@
 		<Option title="1_homework"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\cmd\;CMake Files\src\;CMake Files\src\storage-device\;CMake Files\src\input\;CMake Files\src\menu\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmd\;CMake Files\src\;CMake Files\src\storage-device\;CMake Files\src\input\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/krul/Documents/tp-c-1iz/cmake-build-debug"/>
@@ -46,7 +46,6 @@
 				<Compiler>
 					<Add directory="/home/krul/Documents/tp-c-1iz/src/storage-device"/>
 					<Add directory="/home/krul/Documents/tp-c-1iz/src/input"/>
-					<Add directory="/home/krul/Documents/tp-c-1iz/src/menu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
@@ -71,7 +70,6 @@
 				<Compiler>
 					<Add directory="/home/krul/Documents/tp-c-1iz/src/storage-device"/>
 					<Add directory="/home/krul/Documents/tp-c-1iz/src/input"/>
-					<Add directory="/home/krul/Documents/tp-c-1iz/src/menu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
@@ -179,52 +177,6 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/krul/Documents/tp-c-1iz/cmake-build-debug/src/input/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="menu">
-				<Option output="/home/krul/Documents/tp-c-1iz/cmake-build-debug/src/menu/libmenu.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/krul/Documents/tp-c-1iz/cmake-build-debug/src/menu"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/krul/Documents/tp-c-1iz/src/menu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/krul/Documents/tp-c-1iz/cmake-build-debug/src/menu/Makefile&quot;  VERBOSE=1 menu"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/krul/Documents/tp-c-1iz/cmake-build-debug/src/menu/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/krul/Documents/tp-c-1iz/cmake-build-debug/src/menu/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/krul/Documents/tp-c-1iz/cmake-build-debug/src/menu/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="menu/fast">
-				<Option output="/home/krul/Documents/tp-c-1iz/cmake-build-debug/src/menu/libmenu.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/krul/Documents/tp-c-1iz/cmake-build-debug/src/menu"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/krul/Documents/tp-c-1iz/src/menu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/krul/Documents/tp-c-1iz/cmake-build-debug/src/menu/Makefile&quot;  VERBOSE=1 menu/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/krul/Documents/tp-c-1iz/cmake-build-debug/src/menu/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/krul/Documents/tp-c-1iz/cmake-build-debug/src/menu/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/krul/Documents/tp-c-1iz/cmake-build-debug/src/menu/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 		</Build>
 		<Unit filename="/home/krul/Documents/tp-c-1iz/cmd/main.c">
 			<Option target="main"/>
@@ -234,12 +186,6 @@
 		</Unit>
 		<Unit filename="/home/krul/Documents/tp-c-1iz/src/input/input.h">
 			<Option target="input"/>
-		</Unit>
-		<Unit filename="/home/krul/Documents/tp-c-1iz/src/menu/menu.c">
-			<Option target="menu"/>
-		</Unit>
-		<Unit filename="/home/krul/Documents/tp-c-1iz/src/menu/menu.h">
-			<Option target="menu"/>
 		</Unit>
 		<Unit filename="/home/krul/Documents/tp-c-1iz/src/storage-device/storage-device.c">
 			<Option target="storage"/>
@@ -261,9 +207,6 @@
 		</Unit>
 		<Unit filename="/home/krul/Documents/tp-c-1iz/src/input/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\src\input\"/>
-		</Unit>
-		<Unit filename="/home/krul/Documents/tp-c-1iz/src/menu/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\src\menu\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

@@ -42,7 +42,7 @@ bool add_storage_device(Storage *s, Storage_device *sd) {
     }
 
     if(s->size + 1 >= s->capacity) {
-        s->capacity *= 2;
+        s->capacity = !(s->capacity) ? 1 : s->capacity * 2;
         s->data = (Storage_device *)realloc(s->data, sizeof(Storage_device) * s->capacity);
 
         if(!s->data) {
@@ -56,16 +56,49 @@ bool add_storage_device(Storage *s, Storage_device *sd) {
 }
 
 bool print_storage_device(Storage_device *sd) {
-    if(printf("%s\t%zu\t%d\t%zu\n", sd->type, sd->capacity, sd->overwrite, sd->inventory_number)) {
-        return 1;
+    if(sd == NULL) {
+        return 0;
     }
-    return 0;
+    printf("\t{\n");
+    printf("\t\ttype: %s;\n", sd->type);
+    printf("\t\toverwrite: %d;\n", sd->overwrite);
+    printf("\t\tcapacity: %lu;\n", sd->capacity);
+    printf("\t\tinventory_number: %lu;\n", sd->inventory_number);
+    printf("\t},\n");
+    return 1;
 }
 
 bool print_storage(Storage *s) {
+    if(!s) {
+        return 0;
+    }
+
+    printf("storage_devices:\n{\n");
+
+    for(size_t i = 0; i < s->size; ++i) {
+        printf("\tstorage_device-%lu:",i);
+        print_storage_device(&s->data[i]);
+    }
+
+    printf("}\n");
+
     return 1;
 }
 
 bool delete_storage(Storage *s) {
-	return 1;
+    if(s == NULL) {
+        return 1;
+    }
+
+    if(s->data == NULL) {
+        free(s);
+        s = NULL;
+        return 1;
+    }
+
+    free(s->data);
+    free(s);
+    s = NULL;
+
+    return 1;
 }

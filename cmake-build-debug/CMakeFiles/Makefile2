@@ -114,21 +114,18 @@ cmd/clean: cmd/CMakeFiles/main.dir/clean
 # Recursive "all" directory target.
 src/all: src/storage-device/all
 src/all: src/input/all
-src/all: src/menu/all
 
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
 src/preinstall: src/storage-device/preinstall
 src/preinstall: src/input/preinstall
-src/preinstall: src/menu/preinstall
 
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
 src/clean: src/storage-device/clean
 src/clean: src/input/clean
-src/clean: src/menu/clean
 
 .PHONY : src/clean
 
@@ -149,24 +146,6 @@ src/input/preinstall:
 src/input/clean: src/input/CMakeFiles/input.dir/clean
 
 .PHONY : src/input/clean
-
-#=============================================================================
-# Directory level rules for directory src/menu
-
-# Recursive "all" directory target.
-src/menu/all: src/menu/CMakeFiles/menu.dir/all
-
-.PHONY : src/menu/all
-
-# Recursive "preinstall" directory target.
-src/menu/preinstall:
-
-.PHONY : src/menu/preinstall
-
-# Recursive "clean" directory target.
-src/menu/clean: src/menu/CMakeFiles/menu.dir/clean
-
-.PHONY : src/menu/clean
 
 #=============================================================================
 # Directory level rules for directory src/storage-device
@@ -192,7 +171,6 @@ src/storage-device/clean: src/storage-device/CMakeFiles/storage.dir/clean
 # All Build rule for target.
 cmd/CMakeFiles/main.dir/all: src/storage-device/CMakeFiles/storage.dir/all
 cmd/CMakeFiles/main.dir/all: src/input/CMakeFiles/input.dir/all
-cmd/CMakeFiles/main.dir/all: src/menu/CMakeFiles/menu.dir/all
 	$(MAKE) $(MAKESILENT) -f cmd/CMakeFiles/main.dir/build.make cmd/CMakeFiles/main.dir/depend
 	$(MAKE) $(MAKESILENT) -f cmd/CMakeFiles/main.dir/build.make cmd/CMakeFiles/main.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/krul/Documents/tp-c-1iz/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target main"
@@ -200,7 +178,7 @@ cmd/CMakeFiles/main.dir/all: src/menu/CMakeFiles/menu.dir/all
 
 # Build rule for subdir invocation for target.
 cmd/CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/krul/Documents/tp-c-1iz/cmake-build-debug/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/krul/Documents/tp-c-1iz/cmake-build-debug/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cmd/CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/krul/Documents/tp-c-1iz/cmake-build-debug/CMakeFiles 0
 .PHONY : cmd/CMakeFiles/main.dir/rule
@@ -222,7 +200,7 @@ cmd/CMakeFiles/main.dir/clean:
 src/storage-device/CMakeFiles/storage.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/storage-device/CMakeFiles/storage.dir/build.make src/storage-device/CMakeFiles/storage.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/storage-device/CMakeFiles/storage.dir/build.make src/storage-device/CMakeFiles/storage.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/krul/Documents/tp-c-1iz/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target storage"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/krul/Documents/tp-c-1iz/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target storage"
 .PHONY : src/storage-device/CMakeFiles/storage.dir/all
 
 # Build rule for subdir invocation for target.
@@ -268,33 +246,6 @@ input: src/input/CMakeFiles/input.dir/rule
 src/input/CMakeFiles/input.dir/clean:
 	$(MAKE) $(MAKESILENT) -f src/input/CMakeFiles/input.dir/build.make src/input/CMakeFiles/input.dir/clean
 .PHONY : src/input/CMakeFiles/input.dir/clean
-
-#=============================================================================
-# Target rules for target src/menu/CMakeFiles/menu.dir
-
-# All Build rule for target.
-src/menu/CMakeFiles/menu.dir/all:
-	$(MAKE) $(MAKESILENT) -f src/menu/CMakeFiles/menu.dir/build.make src/menu/CMakeFiles/menu.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/menu/CMakeFiles/menu.dir/build.make src/menu/CMakeFiles/menu.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/krul/Documents/tp-c-1iz/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target menu"
-.PHONY : src/menu/CMakeFiles/menu.dir/all
-
-# Build rule for subdir invocation for target.
-src/menu/CMakeFiles/menu.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/krul/Documents/tp-c-1iz/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/menu/CMakeFiles/menu.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/krul/Documents/tp-c-1iz/cmake-build-debug/CMakeFiles 0
-.PHONY : src/menu/CMakeFiles/menu.dir/rule
-
-# Convenience name for target.
-menu: src/menu/CMakeFiles/menu.dir/rule
-
-.PHONY : menu
-
-# clean rule for target.
-src/menu/CMakeFiles/menu.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/menu/CMakeFiles/menu.dir/build.make src/menu/CMakeFiles/menu.dir/clean
-.PHONY : src/menu/CMakeFiles/menu.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

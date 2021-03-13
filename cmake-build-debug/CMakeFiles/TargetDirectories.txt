@@ -11,6 +11,3 @@
 /home/krul/Documents/tp-c-1iz/cmake-build-debug/src/input/CMakeFiles/rebuild_cache.dir
 /home/krul/Documents/tp-c-1iz/cmake-build-debug/src/input/CMakeFiles/edit_cache.dir
 /home/krul/Documents/tp-c-1iz/cmake-build-debug/src/input/CMakeFiles/input.dir
-/home/krul/Documents/tp-c-1iz/cmake-build-debug/src/menu/CMakeFiles/rebuild_cache.dir
-/home/krul/Documents/tp-c-1iz/cmake-build-debug/src/menu/CMakeFiles/edit_cache.dir
-/home/krul/Documents/tp-c-1iz/cmake-build-debug/src/menu/CMakeFiles/menu.dir

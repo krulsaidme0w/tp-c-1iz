@@ -169,19 +169,6 @@ input/fast:
 	$(MAKE) $(MAKESILENT) -f src/input/CMakeFiles/input.dir/build.make src/input/CMakeFiles/input.dir/build
 .PHONY : input/fast
 
-#=============================================================================
-# Target rules for targets named menu
-
-# Build rule for target.
-menu: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 menu
-.PHONY : menu
-
-# fast build rule for target.
-menu/fast:
-	$(MAKE) $(MAKESILENT) -f src/menu/CMakeFiles/menu.dir/build.make src/menu/CMakeFiles/menu.dir/build
-.PHONY : menu/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,7 +179,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... input"
 	@echo "... main"
-	@echo "... menu"
 	@echo "... storage"
 .PHONY : help
 
