@@ -68,21 +68,39 @@ bool print_storage_device(Storage_device *sd) {
     return 1;
 }
 
-bool print_storage(Storage *s) {
+bool print_storage(Storage *s, size_t size, size_t f) {
     if(!s) {
         return 0;
     }
+    if(!f) {
+        printf("storage_devices:\n{\n");
 
-    printf("storage_devices:\n{\n");
+        for (size_t i = 0; i < s->size; ++i) {
+            printf("\tstorage_device-%lu:", i);
+            print_storage_device(&s->data[i]);
+        }
 
-    for(size_t i = 0; i < s->size; ++i) {
-        printf("\tstorage_device-%lu:",i);
-        print_storage_device(&s->data[i]);
+        printf("}\n");
+
+        return 1;
     }
 
-    printf("}\n");
+    if(f) {
+        printf("storage_devices:\n{\n");
 
-    return 1;
+        for (size_t i = 0; i < s->size; ++i) {
+            if(*(&s->data[i].capacity) >= size &&  *(&s->data[i].overwrite)) {
+                printf("\tstorage_device-%lu:", i);
+                print_storage_device(&s->data[i]);
+            }
+        }
+
+        printf("}\n");
+
+        return 1;
+    }
+
+    return 0;
 }
 
 bool delete_storage(Storage *s) {

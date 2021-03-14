@@ -25,7 +25,7 @@ int main() {
         }
 
         if(!strcmp(command, "1")) {
-            print_storage(s);
+            print_storage(s, 0, 0);
             continue;
         }
 
@@ -35,7 +35,7 @@ int main() {
             size_t sd_capacity;
 
             printf("\ninput type of storage device: ");
-            char *sd_type = gstr();
+            char *sd_type = get_s();
 
             if (sd_type == NULL) {
                 printf("\nfailed to allocate memory to type *char");
@@ -43,17 +43,24 @@ int main() {
             }
 
             printf("\ninput storage device overwrite possibility(1, 0): ");
-            sd_overwrite = 1;
+            int temp = get_bool();
+            if(temp == -1) {
+                printf("\nbad overwrite");
+                break;
+            }
+            sd_overwrite = temp;
 
             printf("\ninput inv. number of storage device: ");
-            if(!scanf("%lu", &sd_number)) {
-                printf("\nfailed to allocate memory to inv. number");
+            sd_number = get_size_t();
+            if(sd_number == 0) {
+                printf("\nbad inv. number");
                 break;
             }
 
             printf("\ninput capacity of storage device: ");
-            if(!scanf("%lu", &sd_capacity)) {
-                printf("\nfailed to allocate memory to capacity");
+            sd_capacity = get_size_t();
+            if(sd_capacity == 0) {
+                printf("\nbad capacity");
                 break;
             }
 
@@ -68,6 +75,14 @@ int main() {
         }
 
         if(!strcmp(command, "3")) {
+            printf("\ninput size: ");
+            size_t sd_size;
+            sd_size = get_size_t();
+            if(sd_size == 0) {
+                printf("\nbad size");
+            }
+
+            print_storage(s, sd_size, 1);
             continue;
         }
 
@@ -77,7 +92,7 @@ int main() {
         }
 
         printf("unknown command: %s\n", command);
-    } while(printf("\ninput command number (0 - help): "), command = gstr(), command != NULL);
+    } while(printf("\ninput command number (0 - help): "), command = get_s(), command != NULL);
 
     delete_storage(s);
 
