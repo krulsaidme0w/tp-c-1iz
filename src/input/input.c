@@ -64,7 +64,7 @@ int get_int() {
     int result = 0;
     while (c = get_char(), c != EOF && c != '\n') {
         if (!(c >= '0' && c <= '9')) {
-            char *buf = get_s(); /* Read to the end of the string */
+            char *buf = get_s();
             if (buf) {
                 free(buf);
             }
