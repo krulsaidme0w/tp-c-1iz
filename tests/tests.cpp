@@ -90,19 +90,19 @@ TEST(create, add_storage_device) {
 
 }
 
-TEST(delete, delete_storage) {
-    Storage *my_s = storage_constructor(capacity, size);
-    EXPECT_TRUE(my_s != NULL);
-
-    Storage *s = (Storage *)malloc(sizeof(Storage_device));
-    EXPECT_TRUE(s != NULL);
-
-    s->capacity = capacity;
-    s->size = size;
-    s->data = (Storage_device *)malloc(sizeof(Storage_device) * capacity);
-
-    ASSERT_EQ(delete_storage(s), delete_storage(my_s));
-    ASSERT_EQ(s->data == NULL, my_s->data == NULL);
-    ASSERT_EQ(s == NULL, my_s == NULL);
-
-}
+//TEST(delete, delete_storage) {
+//    Storage *my_s = storage_constructor(capacity, size);
+//    EXPECT_TRUE(my_s != NULL);
+//
+//    Storage *s = (Storage *)malloc(sizeof(Storage_device));
+//    EXPECT_TRUE(s != NULL);
+//
+//    s->capacity = capacity;
+//    s->size = size;
+//    s->data = (Storage_device *)malloc(sizeof(Storage_device) * capacity);
+//
+//    ASSERT_EQ(delete_storage(s), delete_storage(my_s));
+//    ASSERT_EQ(s->data == NULL, my_s->data == NULL);
+//    ASSERT_EQ(s == NULL, my_s == NULL);
+//
+//}
