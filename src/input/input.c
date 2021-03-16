@@ -77,6 +77,7 @@ int get_int() {
 
 int get_bool() {
     int c = get_int();
+
     if(c == 0)
         return 0;
     else if(c == 1)
