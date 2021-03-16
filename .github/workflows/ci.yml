@@ -27,6 +27,9 @@ jobs:
       - name: install git
         run: sudo apt install git
 
+      - name: install gtest
+        run: sudo apt install gtest
+        
       - name: build project
         run: make build-project
 
