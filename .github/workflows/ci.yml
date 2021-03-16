@@ -36,4 +36,12 @@ jobs:
       - name: run tests
         run: make run-all-tests
 
+      - name: get coverage
+        run: make coverage
+
+      - name: cov
+        uses: actions/upload-artifact@v2
+        with:
+          name: cov
+          path: build/src/storage-device/CMakeFiles/storage.dir/coverage
 
