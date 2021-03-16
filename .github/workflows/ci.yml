@@ -1,0 +1,35 @@
+name: my_si
+
+on:
+  push:
+    branches: [dev, main]
+
+  pull_request: [main]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: install build-essential
+        run: sudo apt install build-essential
+
+      - name: install lcov
+        run: sudo apt install lcov
+
+      - name: install valgrind
+        run: sudo apt install valgrind
+
+      - name: install git
+        run: sudo apt install git
+
+      -name: build project
+        run: make build-project
+
+      -name: run tests
+        run: run-all-tests
+
+
