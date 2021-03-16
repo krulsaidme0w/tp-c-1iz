@@ -11,7 +11,7 @@ run-all-tests:
 	cd build/tests/ && ./tests
 
 coverage:
-	cd build/src/storage-device/CMakeFiles/storage.dir && gcov *.gcno && lcov --capture --directory .--output-file coverage.info && mkdir coverage && genhtml coverage.info --output-directory coverage
+	cd build/src/storage-device/CMakeFiles/storage.dir && gcov *.gcno && lcov --capture --directory . --output-file coverage.info && mkdir coverage && genhtml coverage.info --output-directory coverage
 
 build-n-test:
 	make build-project && make run-all-tests
