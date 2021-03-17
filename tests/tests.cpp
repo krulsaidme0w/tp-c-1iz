@@ -63,7 +63,6 @@ TEST(create, storage_constructor) {
     free_s(my_s);
 }
 
-this test also test previous 2 tests
 TEST(create, add_storage_device) {
     Storage *my_s = storage_constructor(capacity, size);
     EXPECT_TRUE(my_s != NULL);
@@ -110,7 +109,6 @@ TEST(delete, delete_storage) {
     Storage *my_s = storage_constructor(capacity, size);
     EXPECT_TRUE(my_s != NULL);
     ASSERT_EQ(1, delete_storage(&my_s));
-    ASSERT_EQ(NULL, my_s->data);
     ASSERT_EQ(NULL, my_s);
 
 }
