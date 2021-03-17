@@ -18,16 +18,9 @@ const size_t size = 0;
 const size_t new_size = 1;
 
 void free_s(Storage *s) {
-    for(size_t i = 0; i < s->size; i++) {
-
-        if(&s->data[i] == NULL) {
-            continue;
-        }
-
-        free(&s->data[i]);
-    }
-
+    free(s->data);
     free(s);
+    s = NULL;
 }
 
 TEST(create, storage_device_constructor) {
@@ -49,7 +42,7 @@ TEST(create, storage_device_constructor) {
 
     free(sd);
     free(my_sd);
-    
+
 }
 
 TEST(create, storage_constructor) {
@@ -70,7 +63,7 @@ TEST(create, storage_constructor) {
     free_s(my_s);
 }
 
-//this test also test previous 2 tests
+this test also test previous 2 tests
 TEST(create, add_storage_device) {
     Storage *my_s = storage_constructor(capacity, size);
     EXPECT_TRUE(my_s != NULL);
@@ -116,24 +109,8 @@ TEST(create, add_storage_device) {
 TEST(delete, delete_storage) {
     Storage *my_s = storage_constructor(capacity, size);
     EXPECT_TRUE(my_s != NULL);
-
-    Storage *s = (Storage *)malloc(sizeof(Storage_device));
-    EXPECT_TRUE(s != NULL);
-
-    s->capacity = capacity;
-    s->size = size;
-    s->data = (Storage_device *)malloc(sizeof(Storage_device) * capacity);
-
-    for(size_t i = 0; i < s->size; i++) {
-
-        if(&s->data[i] == NULL) {
-            continue;}
-        free(&s->data[i]);
-    }
-    free(s);
-
-    ASSERT_EQ(1, delete_storage(my_s));
-    ASSERT_EQ(s->data == NULL, my_s->data == NULL);
-    ASSERT_EQ(s == NULL, my_s == NULL);
+    ASSERT_EQ(1, delete_storage(&my_s));
+    ASSERT_EQ(NULL, my_s->data);
+    ASSERT_EQ(NULL, my_s);
 
 }

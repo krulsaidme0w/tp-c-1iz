@@ -22,6 +22,6 @@ Storage * storage_constructor(size_t capacity, size_t size);
 bool add_storage_device(Storage *s, Storage_device *sd);
 bool print_storage_device(Storage_device *sd);
 bool print_storage(Storage *s, size_t size, size_t f);
-bool delete_storage(Storage *s);
+bool delete_storage(Storage **s);
 
-#endif 
+#endif

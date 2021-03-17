@@ -19,10 +19,10 @@ Storage_device * storage_device_constructor(char *type, bool overwrite, size_t c
 }
 
 Storage * storage_constructor(size_t capacity, size_t size) {
-    Storage *s = malloc(sizeof(Storage));
+    Storage *s = (Storage *)malloc(sizeof(Storage));
 
     if(!s) {
-        return 0;
+        return NULL;
     }
 
     s->capacity = capacity;
@@ -103,20 +103,22 @@ bool print_storage(Storage *s, size_t size, size_t f) {
     return 0;
 }
 
-bool delete_storage(Storage *s) {
-    if(s == NULL) {
+bool delete_storage(Storage **s) {
+    if(*s == NULL) {
         return 1;
     }
 
-    if(s->data == NULL) {
-        free(s);
-        s = NULL;
+    if((*s)->data == NULL) {
+        free(*s);
+        *s = NULL;
         return 1;
     }
 
-    free(s->data);
-    free(s);
-    s = NULL;
+    free((*s)->data);
+
+    free(*s);
+
+    *s = NULL;
 
     return 1;
 }

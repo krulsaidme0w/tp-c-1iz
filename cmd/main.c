@@ -93,7 +93,7 @@ int main() {
         printf("unknown command: %s\n", command);
     } while(printf("\ninput command number (0 - help): "), command = get_s(), command != NULL);
 
-    delete_storage(s);
+    delete_storage(&s);
 
     return 0;
 }
